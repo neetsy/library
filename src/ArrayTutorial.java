@@ -73,7 +73,7 @@ public class ArrayTutorial {
         Integer[] arr3 = mergeArray(arr1, arr2);
         printArray(arr3);
     }
-// Add from web git
+
     public static void printArray(Integer[] arr) {
         for(int i = 0; i < arr.length; i++){
             System.out.print(" "+ arr[i]);
