@@ -97,6 +97,26 @@ public class ArrayTutorial {
         return finalArray;
     }
 
+    public static Integer[] breakDownArrays(int numberOfArrays, Integer[] arr){
+        return null;
+    }
+
+    public static Integer smallestElementInArray(Integer[] arr) {
+        return null;
+    }
+
+    public static Integer biggesttElementInArray(Integer[] arr) {
+        return null;
+    }
+
+    public static Integer[] mergeArrayAlternately(Integer[] arr1, Integer[] arr2) {
+        return null;
+    }
+
+    public static Integer[] sortArray(Integer[] arr) {
+        return null;
+    }
+
 }
 
 
