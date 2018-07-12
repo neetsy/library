@@ -2,16 +2,16 @@
  * Created by praneet on 6/20/18.
  */
 import java.util.*;
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Random;
 public class ArrayTutorial {
 
     public static void main(String[] args) {
-        List<Integer[]> l = generateListOfArrays(500, 5);
-        for (Integer[] arr: l) {
-            printArray(arr);
-        }
-        printArray(combineAllArrays(l));
+       Integer[] testData = generateData(100);
+       printArray(testData);
+       sortArray(testData);
+       printArray(testData);
 
     }
 
@@ -102,7 +102,16 @@ public class ArrayTutorial {
     }
 
     public static Integer smallestElementInArray(Integer[] arr) {
-        return null;
+        int value = arr[0];
+        for (Integer element: arr) {
+            if (element < value) {
+                element = value;
+            }
+        }
+
+        System.out.println(value);
+
+        return value;
     }
 
     public static Integer biggesttElementInArray(Integer[] arr) {
@@ -114,7 +123,20 @@ public class ArrayTutorial {
     }
 
     public static Integer[] sortArray(Integer[] arr) {
-        return null;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i+1; j < arr.length; j++){
+
+                if (arr[i] > arr[j]){
+
+                     int temporary = arr[i];
+                     arr[i] = arr[j];
+                     arr[j] = temporary;
+                }
+            }
+        }
+
+        return arr;
     }
 
 }
