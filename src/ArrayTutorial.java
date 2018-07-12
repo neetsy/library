@@ -10,6 +10,8 @@ public class ArrayTutorial {
     public static void main(String[] args) {
        Integer[] testData = generateData(100);
        printArray(testData);
+       smallestElementInArray(testData);
+       biggestElementInArray(testData);
        sortArray(testData);
        printArray(testData);
 
@@ -102,20 +104,25 @@ public class ArrayTutorial {
     }
 
     public static Integer smallestElementInArray(Integer[] arr) {
-        int value = arr[0];
-        for (Integer element: arr) {
-            if (element < value) {
-                element = value;
-            }
-        }
+       sortArray(arr);
 
-        System.out.println(value);
+       int smallestValue = arr[0];
 
-        return value;
+        System.out.println("Smallest element in array: " + smallestValue);
+
+        return smallestValue;
     }
 
-    public static Integer biggesttElementInArray(Integer[] arr) {
-        return null;
+    public static Integer biggestElementInArray(Integer[] arr) {
+        sortArray(arr);
+
+        int length = arr.length;
+
+        int biggestValue = arr[length - 1];
+
+        System.out.println("Biggest element in array: " + biggestValue);
+
+        return biggestValue;
     }
 
     public static Integer[] mergeArrayAlternately(Integer[] arr1, Integer[] arr2) {
