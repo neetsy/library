@@ -2,16 +2,18 @@
  * Created by praneet on 6/20/18.
  */
 import java.util.*;
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Random;
 public class ArrayTutorial {
 
     public static void main(String[] args) {
-        List<Integer[]> l = generateListOfArrays(500, 5);
-        for (Integer[] arr: l) {
-            printArray(arr);
-        }
-        printArray(combineAllArrays(l));
+       Integer[] testData = generateData(100);
+       printArray(testData);
+       smallestElementInArray(testData);
+       biggestElementInArray(testData);
+       sortArray(testData);
+       printArray(testData);
 
     }
 
@@ -102,11 +104,25 @@ public class ArrayTutorial {
     }
 
     public static Integer smallestElementInArray(Integer[] arr) {
-        return null;
+       sortArray(arr);
+
+       int smallestValue = arr[0];
+
+        System.out.println("Smallest element in array: " + smallestValue);
+
+        return smallestValue;
     }
 
-    public static Integer biggesttElementInArray(Integer[] arr) {
-        return null;
+    public static Integer biggestElementInArray(Integer[] arr) {
+        sortArray(arr);
+
+        int length = arr.length;
+
+        int biggestValue = arr[length - 1];
+
+        System.out.println("Biggest element in array: " + biggestValue);
+
+        return biggestValue;
     }
 
     public static Integer[] mergeArrayAlternately(Integer[] arr1, Integer[] arr2) {
@@ -114,7 +130,20 @@ public class ArrayTutorial {
     }
 
     public static Integer[] sortArray(Integer[] arr) {
-        return null;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i+1; j < arr.length; j++){
+
+                if (arr[i] > arr[j]){
+
+                     int temporary = arr[i];
+                     arr[i] = arr[j];
+                     arr[j] = temporary;
+                }
+            }
+        }
+
+        return arr;
     }
 
 }
