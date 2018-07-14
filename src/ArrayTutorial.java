@@ -13,6 +13,7 @@ public class ArrayTutorial {
        smallestElementInArray(testData);
        biggestElementInArray(testData);
        sortArray(testData);
+       System.out.print("Sorted Array: ");
        printArray(testData);
 
     }
@@ -75,7 +76,7 @@ public class ArrayTutorial {
         Integer[] arr3 = mergeArray(arr1, arr2);
         printArray(arr3);
     }
-// Add from web git
+
     public static void printArray(Integer[] arr) {
         for(int i = 0; i < arr.length; i++){
             System.out.print(" "+ arr[i]);
@@ -145,6 +146,22 @@ public class ArrayTutorial {
 
         return arr;
     }
+
+
+    //Assignment 2
+
+    //1.
+    //Wrtie a method that takes an array and revers it
+    public static void reverseArray(Integer[] arr) {
+
+    }
+
+    //2.
+    //Write a method that takes an array and return a array of unique elements in provided array
+    public static Integer[] uniqueElementOfArray(Integer[] arr) {
+        return null;
+    }
+
 
 }
 

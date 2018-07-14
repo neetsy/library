@@ -3,7 +3,6 @@ package myFacebook;
 /**
  * Created by praneet on 6/24/18.
  */
-import javax.jws.soap.SOAPBinding;
 import java.util.*;
 
 public class User {
