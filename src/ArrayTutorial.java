@@ -13,7 +13,10 @@ public class ArrayTutorial {
        smallestElementInArray(testData);
        biggestElementInArray(testData);
        sortArray(testData);
+       System.out.println("Sorted Array (Ascending Order): ");
        printArray(testData);
+       System.out.println("Sorted Array (Descending Order): ");
+       reverseArray(testData);
 
     }
 
@@ -100,6 +103,15 @@ public class ArrayTutorial {
     }
 
     public static Integer[] breakDownArrays(int numberOfArrays, Integer[] arr){
+        ArrayList<Integer> breakDown = new ArrayList<Integer>();
+        Scanner s = new Scanner(System.in);
+        for(int i = 0; i < numberOfArrays; i++){
+            System.out.println("How many in array" + (i+1));
+            Integer numberInBrokenDownArray = s.nextInt();
+            breakDown.add(numberInBrokenDownArray);
+            Integer[] array = new Integer[numberInBrokenDownArray];
+        }
+
         return null;
     }
 
@@ -126,6 +138,8 @@ public class ArrayTutorial {
     }
 
     public static Integer[] mergeArrayAlternately(Integer[] arr1, Integer[] arr2) {
+
+
         return null;
     }
 
@@ -144,6 +158,23 @@ public class ArrayTutorial {
         }
 
         return arr;
+    }
+
+    public static void reverseArray(Integer[] arr) {
+        for (int i = 0; i < arr.length/2; i++){
+            int temp = arr[i];
+            arr[i] = arr[arr.length - (i+1)];
+            arr[arr.length - (i+1)] = temp;
+        }
+
+        printArray(arr);
+
+    }
+
+
+    public static Integer[] uniqueElementOfArray(Integer[] arr){
+
+        return null;
     }
 
 }
