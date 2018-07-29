@@ -196,15 +196,15 @@ public class Library {
 //        counter = 0;
 //        System.out.print("Full Name of Student: ");
 //        String studentRemoved = s.next().toLowerCase();
-//        for (Student student: members) {
-//            if(student.name.toLowerCase().equals(studentRemoved)){
-//                members.remove(counter);
-//                System.out.println("Successfully removed " + student.name);
-//                counter++;
-//            }
-//
-//        }
-//        return members;
-//    }
-
+//////        for (Student student: members) {
+////            if(student.name.toLowerCase().equals(studentRemoved)){
+////                System.out.println("Successfully removed " + student.name);
+////                members.remove(counter);
+////                counter++;
+////            }
+////
+////        }
+////        return members;
+////    }
+////
 }

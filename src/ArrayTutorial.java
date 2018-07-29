@@ -8,8 +8,12 @@ import java.util.Random;
 public class ArrayTutorial {
 
     public static void main(String[] args) {
+        Integer[] data = generateData(8);
+        printArray(data);
+        rangeOfArray(data);
+
 //        wordCounter("Hello my name defines who who my Hello person is Hello");
-        wordCounter("Hello my name defines who who my Hello person is Hello Hello my name defines who who my Hello person is Hello");
+//        wordCounter("Hello my name defines who who my Hello person is Hello Hello my name defines who who my Hello person is Hello");
 //        charBreakdown("Praneetsai Iddamsetty");
 ////       Integer[] testData = generateData(10);
 ////       printArray(testData);
@@ -317,6 +321,12 @@ public class ArrayTutorial {
 // Largest gap in an array
 // Given an unsorted array of length N and we have to find largest gap between any two elements of array.In simple words, find max(|Ai-Aj|) where 1 ≤ i ≤ N and 1 ≤ j ≤ N.
 
+    public static void rangeOfArray(Integer[] arr) {
+        Integer length = arr.length;
+        sortArray(arr);
+        Integer range = arr[length-1] - arr[0];
+        System.out.println("Range of Array: " + range);
+    }
 // Examples:
 
 // Input : arr = {3, 10, 6, 7}
