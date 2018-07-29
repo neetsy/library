@@ -300,7 +300,59 @@ public class ArrayTutorial {
 
     }
 
-    // 5 ON problems
+    
+// Question 1
+// Sum of array elements excluding the elements which lie between a and b
+// Given an array of N unique numbers. Also given two numbers a and b such that a will always be before b in the array. The task is to find the sum of the array elements excluding the elements which lie between a and b.
+
+// Examples:
+
+// Input : arr = [2, 1, 6, 9, 11], a = 6, b = 9
+// Output : 14
+
+// Input : arr = [1, 2, 4, 5, 6], a = 2, b = 5
+// Output : 7
+    
+// Question 2
+// Largest gap in an array
+// Given an unsorted array of length N and we have to find largest gap between any two elements of array.In simple words, find max(|Ai-Aj|) where 1 ≤ i ≤ N and 1 ≤ j ≤ N.
+
+// Examples:
+
+// Input : arr = {3, 10, 6, 7}
+// Output : 7
+// Explanation :
+// Here, we can see largest gap can be
+// found between 3 and 10 which is 7
+
+// Input : arr = {-3, -1, 6, 7, 0}
+// Output : 10
+// Explanation :
+// Here, we can see largest gap can be 
+// found between -3 and 7 which is 10
+    
+// Question 3
+// Given an array of integers, segregate even and odd numbers in the array. All the even numbers should be present first, and then the odd numbers.
+
+// Examples:
+
+// Input : 1 9 5 3 2 6 7 11
+// Output : 2 6 5 3 1 9 7 11
+
+// Input : 1 3 2 4 7 6 9 10
+// Output : 2 4 6 10 7 1 9 3
+    
+// Question 4
+// Given a string containing lowercase characters. The task is to print the maximum occurring character in the input string. If 2 or more characters appear the same number of times, print the lexicographically (alphabetically) lowest (first) character.
+
+// Examples:
+
+// Input: test sample
+// Output: e
+// ‘t’, ‘e’ and ‘s’ appears 2 times, but ‘e’ is the lexicographically smallest character.
+
+// Input: sample program
+// Output: a
 
 }
 
