@@ -8,9 +8,7 @@ import java.util.Random;
 public class ArrayTutorial {
 
     public static void main(String[] args) {
-        Integer[] data = generateData(8);
-        printArray(data);
-        rangeOfArray(data);
+        mostOccurringCharacter("aaaaa bbbbb cccc ddddd");
 
 //        wordCounter("Hello my name defines who who my Hello person is Hello");
 //        wordCounter("Hello my name defines who who my Hello person is Hello Hello my name defines who who my Hello person is Hello");
@@ -140,7 +138,7 @@ public class ArrayTutorial {
         return null;
     }
 
-    public static Integer smallestElementInArray(Integer[] arr) {
+    public static Integer smallestElementInArray(int[] arr) {
        sortArray(arr);
 
        int smallestValue = arr[0];
@@ -150,7 +148,7 @@ public class ArrayTutorial {
         return smallestValue;
     }
 
-    public static Integer biggestElementInArray(Integer[] arr) {
+    public static Integer biggestElementInArray(int[] arr) {
         sortArray(arr);
 
         int length = arr.length;
@@ -169,7 +167,7 @@ public class ArrayTutorial {
     }
 
 
-    public static void sortArray(Integer[] arr) {
+    public static void sortArray(int[] arr) {
 
         for (int i = 0; i < arr.length; i++) {
             for (int j = i+1; j < arr.length; j++){
@@ -322,10 +320,19 @@ public class ArrayTutorial {
 // Given an unsorted array of length N and we have to find largest gap between any two elements of array.In simple words, find max(|Ai-Aj|) where 1 ≤ i ≤ N and 1 ≤ j ≤ N.
 
     public static void rangeOfArray(Integer[] arr) {
-        Integer length = arr.length;
-        sortArray(arr);
-        Integer range = arr[length-1] - arr[0];
-        System.out.println("Range of Array: " + range);
+        Integer lowest = arr[0];
+        Integer highest = arr[0];
+        for(int i = 1; i < arr.length; i++){
+            if(arr[i] < lowest){
+                lowest = arr[i];
+            }
+
+            if(arr[i] > highest){
+                highest = arr[i];
+            }
+        }
+
+        System.out.println("Range of Array: " + (highest - lowest));
     }
 // Examples:
 
@@ -343,7 +350,9 @@ public class ArrayTutorial {
     
 // Question 3
 // Given an array of integers, segregate even and odd numbers in the array. All the even numbers should be present first, and then the odd numbers.
+public static void evensAndOdds(Integer[] arr){
 
+}
 // Examples:
 
 // Input : 1 9 5 3 2 6 7 11
@@ -354,7 +363,43 @@ public class ArrayTutorial {
     
 // Question 4
 // Given a string containing lowercase characters. The task is to print the maximum occurring character in the input string. If 2 or more characters appear the same number of times, print the lexicographically (alphabetically) lowest (first) character.
+public static void mostOccurringCharacter(String string) {
 
+    char[] charArray =  string.toCharArray();
+    int[] asciiMatch = new int[52];
+    for (char character: charArray) {
+        if(character==' ') {
+            continue;
+        }
+        int matchReference = (int) character;
+        if(matchReference < 91) {
+            asciiMatch[matchReference-65]++;
+        } else {
+            asciiMatch[matchReference-71]++;
+        }
+
+    }
+
+    int largestValue = asciiMatch[0];
+    for(int i = 1; i < asciiMatch.length; i++){
+        if(asciiMatch[i] > largestValue){
+            largestValue = asciiMatch[i];
+        }
+
+    }
+
+    for(int o = 0; o < asciiMatch.length; o++){
+        if(asciiMatch[o] == largestValue){
+            char acciiChar = 0;
+            if(o<26) acciiChar= (char) (o+65);
+            else acciiChar=  (char) (o+71);
+            System.out.println("Most occurring character: ");
+            System.out.println(acciiChar + ": " + asciiMatch[o]);
+            System.exit(0);
+        }
+    }
+
+}
 // Examples:
 
 // Input: test sample
