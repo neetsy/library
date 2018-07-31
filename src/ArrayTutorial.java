@@ -8,12 +8,13 @@ import java.util.Random;
 public class ArrayTutorial {
 
     public static void main(String[] args) {
-        mostOccurringCharacter("aaaaa bbbbb cccc ddddd");
+        int[] data = {4, 2, 1, 5, 7, 8, 3, 9};
+        sumWithExclusion(data, 2, 7);
 
 //        wordCounter("Hello my name defines who who my Hello person is Hello");
 //        wordCounter("Hello my name defines who who my Hello person is Hello Hello my name defines who who my Hello person is Hello");
 //        charBreakdown("Praneetsai Iddamsetty");
-////       Integer[] testData = generateData(10);
+////       int[] testData = generateData(10);
 ////       printArray(testData);
 //////       smallestElementInArray(testData);
 //////       biggestElementInArray(testData);
@@ -23,8 +24,8 @@ public class ArrayTutorial {
 ////       System.out.println("Sorted Array (Descending Order): ");
 ////       reverseArray(testData);
 ////        printArray(testData);
-//          Integer[] testData = {2, 5, 2, 6, 3, 2, 2, 4, 67, 2};
-//          Integer[] uniqueData = uniqueElementOfArray(testData);
+//          int[] testData = {2, 5, 2, 6, 3, 2, 2, 4, 67, 2};
+//          int[] uniqueData = uniqueElementOfArray(testData);
 //          printArray(uniqueData);
 //
 //          char a = 98;
@@ -43,25 +44,25 @@ public class ArrayTutorial {
 
     }
 
-    public static Integer[] search() {
+    public static int[] search() {
 
-        Integer[] data = new Integer[1000];
+        int[] data = new int[1000];
         Random number = new Random();
         for (int i = 0; i < 1000; i++) {
             int randomNumber = number.nextInt(20000) - 10000;
             data[i] = randomNumber;
         }
         System.out.println("Numbers less than 1000");
-        List<Integer[]> filteredNumbers = new ArrayList<Integer[]>();
-        for (Integer randomNumber : data) {
+        List<int[]> filteredNumbers = new ArrayList<int[]>();
+        for (int randomNumber : data) {
             if (randomNumber < 1000) {
                 System.out.println(randomNumber);
 
             }
         }
         System.out.println("Numbers between -1000 and 1000");
-        List<Integer[]> furtherFilteredNumbers = new ArrayList<Integer[]>();
-        for (Integer randomNumber : data) {
+        List<int[]> furtherFilteredNumbers = new ArrayList<int[]>();
+        for (int randomNumber : data) {
             if (randomNumber > -1000 && randomNumber < 1000) {
                 System.out.println(randomNumber);
             }
@@ -70,9 +71,9 @@ public class ArrayTutorial {
         return data;
     }
 
-    public static Integer[] generateData(int size) {
+    public static int[] generateData(int size) {
         Random generator = new Random();
-        Integer[] testData = new Integer[size];
+        int[] testData = new int[size];
         for (int d = 0; d < size; d++) {
             int fillData = generator.nextInt(5000);
             testData[d] = fillData;
@@ -80,9 +81,9 @@ public class ArrayTutorial {
         return testData;
     }
 
-    public static Integer[] mergeArray(Integer[] arr1, Integer[] arr2) {
+    public static int[] mergeArray(int[] arr1, int[] arr2) {
         int arr3length = arr1.length + arr2.length;
-        Integer[] arr3 = new Integer[arr3length];
+        int[] arr3 = new int[arr3length];
         for (int l = 0; l < arr1.length; l++) {
             arr3[l] = arr1[l];
         }
@@ -94,51 +95,51 @@ public class ArrayTutorial {
     }
 
     public static void mergeTest1() {
-        Integer[] arr1 = generateData(7);
-        Integer[] arr2 = generateData(5);
+        int[] arr1 = generateData(7);
+        int[] arr2 = generateData(5);
         printArray(arr1);
         printArray(arr2);
-        Integer[] arr3 = mergeArray(arr1, arr2);
+        int[] arr3 = mergeArray(arr1, arr2);
         printArray(arr3);
     }
 // Add from web git
-    public static void printArray(Integer[] arr) {
+    public static void printArray(int[] arr) {
         for(int i = 0; i < arr.length; i++){
             System.out.print(" "+ arr[i]);
         }
         System.out.println();
     }
 
-    public static List<Integer[]> generateListOfArrays(int listSize, int arraySize){
-        List<Integer[]> combinedList = new ArrayList<Integer[]>();
+    public static List<int[]> generateListOfArrays(int listSize, int arraySize){
+        List<int[]> combinedList = new ArrayList<int[]>();
         for(int i = 0; i < listSize; i++){
             combinedList.add(generateData(arraySize));
         }
         return combinedList;
     }
 
-    public static Integer[] combineAllArrays(List<Integer[]> listOfArrays){
-        Integer[] finalArray = new Integer[0];
-        for (Integer[] arr: listOfArrays) {
+    public static int[] combineAllArrays(List<int[]> listOfArrays){
+        int[] finalArray = new int[0];
+        for (int[] arr: listOfArrays) {
             finalArray = mergeArray(arr,finalArray);
         }
         return finalArray;
     }
 
-    public static Integer[] breakDownArrays(int numberOfArrays, Integer[] arr){
-        ArrayList<Integer> breakDown = new ArrayList<Integer>();
-        Scanner s = new Scanner(System.in);
-        for(int i = 0; i < numberOfArrays; i++){
-            System.out.println("How many in array" + (i+1));
-            Integer numberInBrokenDownArray = s.nextInt();
-            breakDown.add(numberInBrokenDownArray);
-            Integer[] array = new Integer[numberInBrokenDownArray];
-        }
+//    public static int[] breakDownArrays(int numberOfArrays, int[] arr){
+//        ArrayList<int> breakDown = new ArrayList<int>();
+//        Scanner s = new Scanner(System.in);
+//        for(int i = 0; i < numberOfArrays; i++){
+//            System.out.println("How many in array" + (i+1));
+//            int numberInBrokenDownArray = s.nextInt();
+//            breakDown.add(numberInBrokenDownArray);
+//            int[] array = new int[numberInBrokenDownArray];
+//        }
+//
+//        return null;
+//    }
 
-        return null;
-    }
-
-    public static Integer smallestElementInArray(int[] arr) {
+    public static int smallestElementInArray(int[] arr) {
        sortArray(arr);
 
        int smallestValue = arr[0];
@@ -148,7 +149,7 @@ public class ArrayTutorial {
         return smallestValue;
     }
 
-    public static Integer biggestElementInArray(int[] arr) {
+    public static int biggestElementInArray(int[] arr) {
         sortArray(arr);
 
         int length = arr.length;
@@ -160,7 +161,7 @@ public class ArrayTutorial {
         return biggestValue;
     }
 
-    public static Integer[] mergeArrayAlternately(Integer[] arr1, Integer[] arr2) {
+    public static int[] mergeArrayAlternately(int[] arr1, int[] arr2) {
 
 
         return null;
@@ -183,7 +184,7 @@ public class ArrayTutorial {
 
     }
 
-    public static void reverseArray(Integer[] arr) {
+    public static void reverseArray(int[] arr) {
         for (int i = 0; i < arr.length/2; i++){
             int temp = arr[i];
             arr[i] = arr[arr.length - (i+1)];
@@ -192,7 +193,7 @@ public class ArrayTutorial {
     }
 
 
-    public static Integer[] uniqueElementOfArray(Integer[] arr){
+    public static int[] uniqueElementOfArray(int[] arr){
         int firstPointer = 0;
         int lastPointer = arr.length-1;
         for (firstPointer = 0; firstPointer < lastPointer; firstPointer++) {
@@ -211,7 +212,7 @@ public class ArrayTutorial {
                 }
             }
         }
-        Integer[] uniqueData = new Integer[lastPointer];
+        int[] uniqueData = new int[lastPointer];
         for (int i = 0; i < lastPointer; i++) {
             uniqueData[i] = arr[i];
         }
@@ -307,6 +308,30 @@ public class ArrayTutorial {
 // Sum of array elements excluding the elements which lie between a and b
 // Given an array of N unique numbers. Also given two numbers a and b such that a will always be before b in the array. The task is to find the sum of the array elements excluding the elements which lie between a and b.
 
+    public static void sumWithExclusion(int[] arr, int exclusionA, int exclusionB){
+        for(int i= 0; i < arr.length; i++){
+            if(arr[i] == exclusionA){
+                arr[i] = 0;
+                for(int o = i; o < arr.length; o++){
+                    if(arr[o] == exclusionB){
+                        arr[o] = 0;
+                        int sum = 0;
+                        for(int x = 0; x < arr.length; x++){
+                            sum = sum + arr[x];
+                        }
+                        System.out.println(sum);
+                        System.exit(0);
+                    }
+                    else{
+                        arr[o] = 0;
+                    }
+
+                }
+            }
+        }
+
+
+    }
 // Examples:
 
 // Input : arr = [2, 1, 6, 9, 11], a = 6, b = 9
@@ -319,9 +344,9 @@ public class ArrayTutorial {
 // Largest gap in an array
 // Given an unsorted array of length N and we have to find largest gap between any two elements of array.In simple words, find max(|Ai-Aj|) where 1 ≤ i ≤ N and 1 ≤ j ≤ N.
 
-    public static void rangeOfArray(Integer[] arr) {
-        Integer lowest = arr[0];
-        Integer highest = arr[0];
+    public static void rangeOfArray(int[] arr) {
+        int lowest = arr[0];
+        int highest = arr[0];
         for(int i = 1; i < arr.length; i++){
             if(arr[i] < lowest){
                 lowest = arr[i];
@@ -349,8 +374,8 @@ public class ArrayTutorial {
 // found between -3 and 7 which is 10
     
 // Question 3
-// Given an array of integers, segregate even and odd numbers in the array. All the even numbers should be present first, and then the odd numbers.
-public static void evensAndOdds(Integer[] arr){
+// Given an array of ints, segregate even and odd numbers in the array. All the even numbers should be present first, and then the odd numbers.
+public static void evensAndOdds(int[] arr){
 
 }
 // Examples:
